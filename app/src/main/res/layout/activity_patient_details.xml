@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5FBF8"
+    tools:context=".PatientDetailsActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_patient_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="#E5FBF8"
+        app:layout_constraintBottom_toTopOf="@+id/constraint_layout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E5FBF8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/edit_text_treatment_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@android:color/black"
+            android:hint="Your treatment / Analysis"
+            android:minLines="3"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton_add_treatment_actor_doctor"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout_actor_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_treatment_msg">
+
+            <TextView
+                android:id="@+id/text_selected_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16sp"
+                android:layout_weight="-10"
+                android:text="Selected Option"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button_analysis_actor_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:layout_weight="1"
+                android:background="@drawable/doctor_options_bg"
+                android:paddingTop="16sp"
+                android:paddingBottom="16sp"
+                android:text="Your\nAnalysis"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_medicines_actor_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:layout_weight="1"
+                android:background="@drawable/doctor_options_bg"
+                android:paddingTop="16sp"
+                android:paddingBottom="16sp"
+                android:text="Prescribe\nMedicines"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_test_actor_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:layout_weight="1"
+                android:background="@drawable/doctor_options_bg"
+                android:paddingTop="16sp"
+                android:paddingBottom="16sp"
+                android:text="Prescribe\nTest"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_note_actor_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:layout_weight="1"
+                android:background="@drawable/doctor_options_bg"
+                android:paddingTop="16sp"
+                android:paddingBottom="16sp"
+                android:text="Personal\nNote"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton_add_treatment_actor_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#20c253"
+            android:onClick="addTreatment"
+            android:src="@drawable/whatsapp_send_fab"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_text_treatment_msg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edit_text_treatment_msg" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_actor_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="edit_text_treatment_msg,floatingActionButton_add_treatment_actor_doctor" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4sp"
+            android:layout_marginEnd="4sp"
+            android:background="@drawable/logout_bg"
+            android:onClick="logOut"
+            android:text="Log Out"
+            android:padding="14sp"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4sp"
+            android:layout_marginEnd="4sp"
+            android:background="@drawable/doctor_options_bg"
+            android:onClick="finishCurrTreatment"
+            android:text="Finish Current Treatment"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_actor_patient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="button,button2" />
+
+        <EditText
+            android:id="@+id/edit_text_bill_actor_hm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@android:color/black"
+            android:hint="Add / Update Patients Bill"
+            android:minLines="1"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton_add_bill_actor_hm"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton_add_bill_actor_hm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#20c253"
+            android:onClick="addBill"
+            android:src="@drawable/whatsapp_send_fab"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_text_bill_actor_hm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edit_text_bill_actor_hm" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_actor_hm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="edit_text_bill_actor_hm,floatingActionButton_add_bill_actor_hm"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

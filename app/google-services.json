@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "384698947077",
+    "firebase_url": "https://digital-health-profile.firebaseio.com",
+    "project_id": "digital-health-profile",
+    "storage_bucket": "digital-health-profile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384698947077:android:95e166e2fe2c614016ee6c",
+        "android_client_info": {
+          "package_name": "com.somanibrothersservices.digitalhealthprofile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384698947077-oh5k507tdrf5k98pjj1dqjm2qlsnb6v9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4HWssni-Hz7DSrQPvz44yTUEeaKhDBGw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "384698947077-oh5k507tdrf5k98pjj1dqjm2qlsnb6v9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
